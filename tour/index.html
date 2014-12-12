@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+		<title>Park One</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" />
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+		<script type="text/javascript" src="swfobject.js">
+		</script>
+		<script type="text/javascript">
+			// hide URL field on the iPhone/iPod touch
+			function hideUrlBar() {
+    				var p = String(navigator.platform);
+    				var v = String(navigator.appVersion);
+		
+				container = document.getElementById("container");
+				if( p === 'iPad' || p === 'iPhone' || p === 'iPod' ){
+					if (v.indexOf("CPU OS 7_")>=0) {
+						// iOS 7.
+						if (container) {
+							container.style.top=(0) + "px";
+							container.style.left=(0) + "px";
+							container.style.width=(window.innerWidth) + "px";
+							container.style.height=(window.innerHeight) + "px";
+						}
+						window.scrollTo(0, 0);
+					} else {
+						if (container) {
+						var cheight;
+						  	switch(window.innerHeight) {
+								case 208:cheight=268; break; // landscape
+							 	case 260:cheight=320; break; // landscape, fullscreen
+							 	case 336:cheight=396; break; // portrait, in call status bar
+								case 356:cheight=416; break; // portrait 
+								case 424:cheight=484; break; // portrait iPhone5, in call status bar
+								case 444:cheight=504; break; // portrait iPhone5 
+							 	default:
+									cheight=window.innerHeight;
+							}
+							if ((cheight) && ((container.offsetHeight!=cheight) || (window.innerHeight!=cheight))) {
+								container.style.height=cheight + "px";
+								setTimeout(function() { hideUrlBar(); }, 1000);
+							}
+						}
+						document.getElementsByTagName("body")[0].style.marginTop="1px";
+						window.scrollTo(0, 1);
+		 			}
+				}
+			}
+			if (window.addEventListener) {
+				window.addEventListener("load", hideUrlBar);
+				window.addEventListener("resize", hideUrlBar);
+				window.addEventListener("orientationchange", hideUrlBar);
+			}
+		</script>
+		<style type="text/css" title="Default">
+			body, div, h1, h2, h3, span, p {
+				font-family: Verdana,Arial,Helvetica,sans-serif;
+				color: #000000; 
+			}
+			/* fullscreen */
+			html {
+				height:100%;
+			}
+			body {
+				height:100%;
+				margin: 0px;
+				overflow:hidden; /* disable scrollbars */
+			}
+			body {
+			  font-size: 10pt;
+			  background : #ffffff; 
+			}
+			table,tr,td {
+				font-size: 10pt;
+				border-color : #777777;
+				background : #dddddd; 
+				color: #000000; 
+				border-style : solid;
+				border-width : 2px;
+				padding: 5px;
+				border-collapse:collapse;
+			}
+			h1 {
+				font-size: 18pt;
+			}
+			h2 {
+				font-size: 14pt;
+			}
+			.warning { 
+				font-weight: bold;
+			} 
+		</style>	
+	</head>
+	<body>
+		<script type="text/javascript" src="pano2vr_player.js">
+		</script>
+		<script type="text/javascript" src="skin.js">
+		</script>
+		<div id="container" style="width:100%;height:100%;">
+		This content requires HTML5/CSS3, WebGL, or Adobe Flash Player Version 9 or higher.
+		</div>
+		<script type="text/javascript">
+		// check for CSS3 3D transformations and WebGL
+		if (ggHasHtml5Css3D() || ggHasWebGL()) {
+		// use HTML5 panorama
+	
+			// create the panorama player with the container
+			pano=new pano2vrPlayer("container");
+			// add the skin object
+			skin=new pano2vrSkin(pano);
+			// load the configuration
+			pano.readConfigUrl("Tour_out.xml");
+			// hide the URL bar on the iPhone
+			hideUrlBar();
+			
+		} else 
+		if (swfobject.hasFlashPlayerVersion("9.0.0")) {
+			var flashvars = {};
+			var params = {};
+			params.quality = "high";
+			params.bgcolor = "#ffffff";
+			params.allowscriptaccess = "sameDomain";
+			params.allowfullscreen = "true";
+			var attributes = {};
+			attributes.id = "pano";
+			attributes.name = "pano";
+			attributes.align = "middle";
+			swfobject.embedSWF(
+				"Tour_out.swf", "container", 
+				"100%", "100%",
+				"9.0.0", "expressInstall.swf", 
+				flashvars, params, attributes);
+			
+		}
+		</script>
+		<noscript>
+			<p><b>Please enable Javascript!</b></p>
+		</noscript>
+		<script>
+		  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+		  ga('create', 'UA-412195-10', 'ggnome.com');
+		  ga('send', 'pageview');
+		</script>
+	</body>
+</html>
