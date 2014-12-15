@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Search page</title>
+	<link rel="stylesheet" type="text/css" href="css/grid.min.css">
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+  <script src="js/jquery.js"></script>
+  <link rel="stylesheet" href="css/jslider.css" type="text/css">
+	<link rel="stylesheet" href="css/jslider.plastic.css" type="text/css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+  <!-- end -->
+
+	<script type="text/javascript" src="js/jquery.js"></script>
+	
+	<!-- bin/jquery.slider.min.js -->
+	<script type="text/javascript" src="js/jshashtable-2.1_src.js"></script>
+	<script type="text/javascript" src="js/jquery.numberformatter-1.2.3.js"></script>
+	<script type="text/javascript" src="js/tmpl.js"></script>
+	<script type="text/javascript" src="js/jquery.dependClass-0.1.js"></script>
+	<script type="text/javascript" src="js/draggable-0.1.js"></script>
+	<script type="text/javascript" src="js/jquery.slider.js"></script>
+  <!-- end -->
+</head>
+<body>
+	<div class="container">
+		<div class="top-bar">
+			<span class="top_icons left"><a href="">logo</a></span>
+			<span class="top_icons left" style="margin-top:0.7%;font-size:1.5em"><fieldset class="search-bar" style="width:115px;border:1px solid black;padding:0"><i class="icon-search" style="font-size:0.7em;margin-left: 3%;"></i><input type="text" class="inp" style="font-size:0.6em; width:79%;margin-left:3%;border:none"></fieldset></span>
+			<span class="top_icons left"><a href="">browse</a></span>
+			<span class="top_icons right" style="margin-top:0.65%"><button><a href="">List your space</a></button></span>
+			<span class="top_icons right"><a href="">login<i class="icon-enter"></i></a></span>
+			<span class="top_icons right"><a href="">Help<i class="icon-question"></i></a></span>
+			<span class="top_icons right"><a href="">Signup<i class="icon-enter"></i></a></span>
+		</div>
+		<div class="left_pane" id="map-canvas"></div>
+		<div class="right_pane">
+			<div class="one" style="width:100%;background:white">
+				<div class="ui grid" style="margin-top:5px; margin-bottom:10px;overflow-x:hidden">
+					<div class="three wide column row1" style="margin-top:10px;text-align:left;margin-left:-20px;font-size:20px;padding-left:70px">House Type</div>
+					<div class="three wide column row1" style="margin-top:10px"><input type="checkbox"><i class="icon-home"></i><span style="font-size:20px">  Individual</span></div>
+					<div class="three wide column row1" style="margin-top:10px"><input type="checkbox"><i class="icon-office"></i><span style="font-size:20px"> Group</span></div>
+					<div class="three wide column row1" style="margin-top:10px"><input type="checkbox"><i class="icon-building-o"></i><span style="font-size:20px"> Apartment</span></div>
+				</div>
+				<div style="width:90%;margin:auto;margin-top:20px">
+					<hr>
+				</div>
+				<div class="layout" style="margin-top:25px">
+			    <div class="layout-slider" style="width: 85%;margin:auto">
+			      Price Range<i class="icon-inr" style="padding-left:0.5em"></i> <span style="display: inline-block; width: 400px; padding: 0 5px; padding-left:15%;"><input id="Slider1" type="slider" name="price" value="30000.5;60000" /></span>
+			    </div>
+			  </div>
+		    <script type="text/javascript" charset="utf-8">
+		      jQuery("#Slider1").slider({ from: 1000, to: 100000, step: 500, smooth: true, round: 0, dimension: "&nbsp;", skin: "plastic" });
+		    </script>
+				<hr style="margin-top:30px">
+			</div>
+			<div class="two" style="width:100%;">
+				<div class="no_of_results ui grid">
+					<div class="four wide column" style="height:100%;padding:0;padding-left:58px;padding-top:20px">Results</div>
+					<div class="ten wide column" style="height:100%;padding:0;padding-top:20px;text-align:right">1000+ Available</div>
+				</div>
+				<hr>
+				<div class="ui grid" style="width:80%;margin:auto">
+					<div class="seven wide column item" style="margin-top:10px">
+						<a href="../house/index.html"><img class="result_img" src="img/1.jpg"></a>
+						<p>This is awesome.</p>
+					</div>
+					<div class="seven wide column item" style="margin-top:10px">
+						<a href="../house/index.html"><img class="result_img" src="img/1.jpg"></a>
+						<p>This is awesome.</p>
+					</div>
+					<div class="seven wide column item" style="margin-top:10px">
+						<a href="../house/index.html"><img class="result_img" src="img/1.jpg"></a>
+						<p>This is awesome.</p>
+					</div>
+					<div class="seven wide column item" style="margin-top:10px">
+						<a href="../house/index.html"><img class="result_img" src="img/1.jpg"></a>
+						<p>This is awesome.</p>
+					</div>
+					<div class="seven wide column item" style="margin-top:10px">
+						<a href="../house/index.html"><img class="result_img" src="img/1.jpg"></a>
+						<p>This is awesome.</p>
+					</div>
+					<div class="seven wide column item" style="margin-top:10px">
+						<a href="../house/index.html"><img class="result_img" src="img/1.jpg"></a>
+						<p>This is awesome.</p>
+					</div>
+					<div class="seven wide column item" style="margin-top:10px">
+						<a href="../house/index.html"><img class="result_img" src="img/1.jpg"></a>
+						<p>This is awesome.</p>
+					</div>
+					
+				</div>
+			</div>
+		</div>
+	</div>
+	<script src="https://maps.googleapis.com/maps/api/js"></script>
+	<script src="js/main.js"></script>
+</body>
+</html>
