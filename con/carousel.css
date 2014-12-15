@@ -11,8 +11,8 @@ body {
 /* CUSTOMIZE THE NAVBAR
 -------------------------------------------------- */
 
-.navbar .navbar-static-top {
-  background: none repeat scroll 0% 0% rgba(0, 0, 0, 0.1);
+.navbar{
+ background: none repeat scroll 0% 0% rgba(0, 0, 0, 0.1);
 }
 /* Special class on .container surrounding .navbar, used for positioning it into place. */
 .navbar-wrapper {
