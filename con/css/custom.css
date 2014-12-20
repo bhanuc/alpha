@@ -406,6 +406,9 @@ h3.s-sub {
 .modal-content{
 	border-radius: 0px;
 }
-.form-group{
+.btn{
+	border-radius: 0px;
+}
+input.form-control{
 	border-radius: 0px;
 }
