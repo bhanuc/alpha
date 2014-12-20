@@ -24,13 +24,16 @@
      <style type="text/css">
       html, body, #map-canvas { height: 100%; margin: 0; padding: 0;}
 
-      a { color: inherit;}
+      
       .search-panel .form-group {
         margin: 0 5px 20px 5px;
         position: relative;
       }
       input{
         background: white;
+      }
+      .navbar.navbar-fixed-top:after{
+        opacity: 0;
       }
 
     </style>
@@ -49,10 +52,39 @@
 ================================================== -->
   <body class="no-hidden no-touch">
 
-<div class="navbar-wrapper"  >
+<div class="navbar-wrapper">
       <div class="container">
 
-        <nav class="navbar navbar-fixed-top" data-0="color:white; background-color:rgb(0,0,0);opacity:0.3;" data-500="color:black;background-color:rgb(255,255,255);opacity:1;" >
+        <nav class="navbar navbar-fixed-top">
+          <div class="container" >
+            <div class="navbar-header" >
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="glyphicon glyphicon-align-justify"></span>
+              </button>
+              <a class="navbar-brand" href="#" data-0="color:white" data-500="color:black">Rewize.com</a>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+              <ul class="nav navbar-nav">
+                <li class="active"><a href="#" data-0="color:white" data-500="color:black">Home</a></li>
+                <li><a href="#about" data-0="color:white" data-500="color:black">About</a></li>
+                <li><a href="#contact" data-0="color:white" data-500="color:black">Contact</a></li>
+                <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" data-0="color:white" data-500="color:black">Dropdown <span class="caret"></span></a>
+                  <ul class="dropdown-menu" role="menu">
+                    <li><a href="#" data-0="color:white" data-500="color:black">Action</a></li>
+                    <li><a href="#" data-0="color:white" data-500="color:black">Another action</a></li>
+                    <li><a href="#" data-0="color:white" data-500="color:black">Something else here</a></li>
+                    <li class="divider"></li>
+                    <li class="dropdown-header">Nav header</li>
+                    <li><a href="#" data-0="color:white" data-500="color:black">Separated link</a></li>
+                    <li><a href="#" data-0="color:white" data-500="color:black">One more separated link</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+        <nav class="navbar navbar-fixed-top" data-0="background-color:rgb(0,0,0);opacity:0" data-500="background-color:rgb(255,255,255);opacity:1;" >
           <div class="container">
             <div class="navbar-header">
               <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -89,7 +121,7 @@
     ================================================== -->
     <div id="myCarousel" class="carousel slide" >
       <!-- Indicators -->
-      <div id="map-canvas" class="img-responsive" style='overflow: hidden; background-image: url("http://bhanuc.github.io/alpha/img/1.jpg"); background-repeat: no-repeat; background-size: cover;'>
+      <div id="map-canvas" class="img-responsive" style='overflow: hidden; background-image: url("images/building.jpg"); background-repeat: no-repeat; background-size: cover;'>
 
       </div>
       <div class="search_panel" style="position:absolute;bottom:0;height:70px;width:100%;background:rgba(0, 0, 0, 0.4)">
@@ -124,13 +156,13 @@
               </div>
               <div class="form-group hidden-xs adv">
                   <div class="input-group">
-                      <div class="input-group-addon">$</div>
+                      <div class="input-group-addon"><i class="fa fa-inr"></i></div>
                       <input class="form-control price" type="text" placeholder="From">
                   </div>
               </div>
               <div class="form-group hidden-xs adv">
                   <div class="input-group">
-                      <div class="input-group-addon">$</div>
+                      <div class="input-group-addon"><i class="fa fa-inr"></i></div>
                       <input class="form-control price" type="text" placeholder="To">
                   </div>
               </div>
