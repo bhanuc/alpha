@@ -22,7 +22,7 @@
     <!--[if lt IE 9]><script src="/assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
     <script src="http://bhanuc.github.io/alpha/assets/js/ie-emulation-modes-warning.js"></script>
      <style type="text/css">
-      html, body, #map-canvas { height: 100%; margin: 0; padding: 0;}
+      html, body, #map-canvas { height: 100%; margin: 0; padding: 0}
 
       
       .search-panel .form-group {
@@ -51,8 +51,7 @@
 <!-- NAVBAR
 ================================================== -->
   <body class="no-hidden no-touch">
-
-<div class="navbar-wrapper">
+<div class="navbar-wrapper" style="z-index:1000">
       <div class="container">
 
         <nav class="navbar navbar-fixed-top">
@@ -61,61 +60,50 @@
               <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
                 <span class="glyphicon glyphicon-align-justify"></span>
               </button>
-              <a class="navbar-brand" href="#" data-0="color:white" data-500="color:black">Rewize.com</a>
+              <a class="navbar-brand" href="#" data-0="color:white" data-500="color:white">Rewize.com</a>
             </div>
             <div id="navbar" class="navbar-collapse collapse">
               <ul class="nav navbar-nav">
-                <li class="active"><a href="#" data-0="color:white" data-500="color:black">Home</a></li>
-                <li><a href="#about" data-0="color:white" data-500="color:black">About</a></li>
-                <li><a href="#contact" data-0="color:white" data-500="color:black">Contact</a></li>
-                <li class="dropdown">
-                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" data-0="color:white" data-500="color:black">Dropdown <span class="caret"></span></a>
-                  <ul class="dropdown-menu" role="menu">
-                    <li><a href="#" data-0="color:white" data-500="color:black">Action</a></li>
-                    <li><a href="#" data-0="color:white" data-500="color:black">Another action</a></li>
-                    <li><a href="#" data-0="color:white" data-500="color:black">Something else here</a></li>
-                    <li class="divider"></li>
-                    <li class="dropdown-header">Nav header</li>
-                    <li><a href="#" data-0="color:white" data-500="color:black">Separated link</a></li>
-                    <li><a href="#" data-0="color:white" data-500="color:black">One more separated link</a></li>
-                  </ul>
-                </li>
+                <li class="active"><a href="#" data-0="color:white" data-500="color:white">Home</a></li>
+                <li><a href="#about" data-0="color:white" data-500="color:white">About</a></li>
+                <li><a href="#contact" data-0="color:white" data-500="color:white">Contact</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                <li><a data-toggle="modal" data-target="#signin" data-0="color:white" data-500="color:white" style="text-align:right;cursor:pointer">Login</a></li>
+                <li><a data-toggle="modal" data-target="#signup" data-0="color:white" data-500="color:white" class="pull-right" style="text-align:right;cursor:pointer">Signup</a></li>
+                <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-sm">Small modal</button> -->
+
+
               </ul>
             </div>
           </div>
         </nav>
-        <nav class="navbar navbar-fixed-top" data-0="background-color:rgb(0,0,0);opacity:0" data-500="background-color:rgb(255,255,255);opacity:1;" >
+        <nav class="navbar navbar-fixed-top" data-0="background-color:rgb(26, 188, 156);opacity:0" data-500="background-color:rgb(26, 188, 156);opacity:1;" style="border-bottom-width: 0.3px; border-bottom-style: solid; border-bottom-color: white;">
           <div class="container">
             <div class="navbar-header">
               <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
                 <span class="glyphicon glyphicon-align-justify"></span>
               </button>
-              <a class="navbar-brand" href="#">Rewize.com</a>
+              <a class="navbar-brand" href="#" data-0="color:white" data-500="color:white">Rewize.com</a>
             </div>
             <div id="navbar" class="navbar-collapse collapse">
               <ul class="nav navbar-nav">
-                <li class="active"><a href="#">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#contact">Contact</a></li>
-                <li class="dropdown">
-                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Dropdown <span class="caret"></span></a>
-                  <ul class="dropdown-menu" role="menu">
-                    <li><a href="#">Action</a></li>
-                    <li><a href="#">Another action</a></li>
-                    <li><a href="#">Something else here</a></li>
-                    <li class="divider"></li>
-                    <li class="dropdown-header">Nav header</li>
-                    <li><a href="#">Separated link</a></li>
-                    <li><a href="#">One more separated link</a></li>
-                  </ul>
-                </li>
+                <li class="active"><a href="#" data-0="color:white" data-500="color:white">Home</a></li>
+                <li><a href="#about" data-0="color:white" data-500="color:white">About</a></li>
+                <li><a href="#contact" data-0="color:white" data-500="color:white">Contact</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                <li><a data-toggle="modal" data-target="#signin" style="text-align:right;cursor:pointer" data-0="color:white" data-500="color:white">Login</a></li>
+                <li><a data-toggle="modal" data-target="#signup" class="pull-right" style="text-align:right;cursor:pointer" data-0="color:white" data-500="color:white">Signup</a></li>
+                <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-sm">Small modal</button> -->
+
+
               </ul>
             </div>
           </div>
         </nav>
       </div>
     </div>
-
 
     <!-- Carousel
     ================================================== -->
@@ -411,6 +399,100 @@
 
      
     </div><!-- /.container -->
+
+
+    <div class="modal fade" id="signin" role="dialog" aria-labelledby="signinLabel" aria-hidden="false">
+            <div class="modal-dialog modal-sm">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title" id="signinLabel">Sign In</h4>
+                    </div>
+                    <div class="modal-body">
+                        <form role="form">
+                            <div class="form-group">
+                                <div class="btn-group-justified">
+                                    <a href="http://mariusn.com/themes/reales/explore.html" class="btn btn-lg btn-facebook"><span class="fa fa-facebook pull-left"></span>Sign In with Facebook</a>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="btn-group-justified">
+                                    <a href="http://mariusn.com/themes/reales/explore.html" class="btn btn-lg btn-google"><span class="fa fa-google-plus pull-left"></span>Sign In with Google</a>
+                                </div>
+                            </div>
+                            <div class="signOr">OR</div>
+                            <div class="form-group">
+                                <input placeholder="Email Address" class="form-control" type="text">
+                            </div>
+                            <div class="form-group">
+                                <input placeholder="Password" class="form-control" type="password">
+                            </div>
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="col-xs-6">
+                                        <div class="checkbox custom-checkbox"><label><input type="checkbox"><span class="fa fa-check"></span> Remember me</label></div>
+                                    </div>
+                                    <div class="col-xs-6 align-right">
+                                        <p class="help-block"><a href="#" class="text-green isThemeText">Forgot password?</a></p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="btn-group-justified">
+                                    <a href="http://mariusn.com/themes/reales/explore.html" class="btn btn-lg btn-green isThemeBtn">Sign In</a>
+                                </div>
+                            </div>
+                            <p class="help-block">Don't have an account? <a href="#" class="modal-su text-green isThemeText">Sign Up</a></p>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="signup" role="dialog" aria-labelledby="signupLabel" aria-hidden="true">
+            <div class="modal-dialog modal-sm">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title" id="signupLabel">Sign Up</h4>
+                    </div>
+                    <div class="modal-body">
+                        <form role="form">
+                            <div class="form-group">
+                                <div class="btn-group-justified">
+                                    <a href="http://mariusn.com/themes/reales/explore.html" class="btn btn-lg btn-facebook"><span class="fa fa-facebook pull-left"></span>Sign Up with Facebook</a>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="btn-group-justified">
+                                    <a href="http://mariusn.com/themes/reales/explore.html" class="btn btn-lg btn-google"><span class="fa fa-google-plus pull-left"></span>Sign Up with Google</a>
+                                </div>
+                            </div>
+                            <div class="signOr">OR</div>
+                            <div class="form-group">
+                                <input placeholder="First Name" class="form-control" type="text">
+                            </div>
+                            <div class="form-group">
+                                <input placeholder="Last Name" class="form-control" type="text">
+                            </div>
+                            <div class="form-group">
+                                <input placeholder="Email Address" class="form-control" type="text">
+                            </div>
+                            <div class="form-group">
+                                <input placeholder="Password" class="form-control" type="password">
+                            </div>
+                            <div class="form-group">
+                                <input placeholder="Confirm Password" class="form-control" type="password">
+                            </div>
+                            <div class="form-group">
+                                <div class="btn-group-justified">
+                                    <a href="http://mariusn.com/themes/reales/explore.html" class="btn btn-lg btn-green isThemeBtn">Sign Up</a>
+                                </div>
+                            </div>
+                            <p class="help-block">Already a Reales member? <a href="#" class="modal-si text-green isThemeText">Sign In</a></p>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
 
      <!-- FOOTER -->
         <footer style="overflow-x:hidden">
