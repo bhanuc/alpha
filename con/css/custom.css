@@ -292,3 +292,95 @@ h3.s-sub {
     -moz-animation: moveFromBottom 500ms ease;
     -ms-animation: moveFromBottom 500ms ease;
 }
+.btn-google {
+    background-color: #dd4b39;
+    color: #fff;
+}
+.btn-o.btn-google {
+    background-color: transparent;
+    color: #dd4b39;
+    border-color: #dd4b39;
+}
+.no-touch .btn-google:hover,
+.btn-google:focus,
+.btn-google:active,
+.btn-google.active,
+.open > .dropdown-toggle.btn-google {
+    background-color: #c44433;
+    color: #fff;
+}
+.no-touch .btn-o.btn-google:hover,
+.btn-o.btn-google:focus,
+.btn-o.btn-google:active,
+.btn-o.btn-google.active,
+.open > .dropdown-toggle.btn-o.btn-google {
+    background-color: #dd4b39;
+    color: #fff;
+}
+.btn-facebook {
+    background-color: #43609c;
+    color: #fff;
+}
+.btn-o.btn-facebook {
+    background-color: transparent;
+    color: #43609c;
+    border-color: #43609c;
+}
+.no-touch .btn-facebook:hover,
+.btn-facebook:focus,
+.btn-facebook:active,
+.btn-facebook.active,
+.open > .dropdown-toggle.btn-facebook {
+    background-color: #395285;
+    color: #fff;
+}
+.no-touch .btn-o.btn-facebook:hover,
+.btn-o.btn-facebook:focus,
+.btn-o.btn-facebook:active,
+.btn-o.btn-facebook.active,
+.open > .dropdown-toggle.btn-o.btn-facebook {
+    background-color: #43609c;
+    color: #fff;
+}
+.signOr {
+    padding-bottom: 10px;
+    text-align: center
+  }
+.btn-green {
+    background-color: #0eaaa6;
+    color: #fff;
+}
+.btn-o.btn-green {
+    background-color: transparent;
+    color: #0eaaa6;
+    border-color: #0eaaa6;
+}
+.no-touch .btn-green:hover,
+.btn-green:focus,
+.btn-green:active,
+.btn-green.active,
+.open > .dropdown-toggle.btn-green {
+    background-color: #068b85;
+    color: #fff;
+}
+.no-touch .btn-o.btn-green:hover,
+.btn-o.btn-green:focus,
+.btn-o.btn-green:active,
+.btn-o.btn-green.active,
+.open > .dropdown-toggle.btn-o.btn-green {
+    background-color: #0eaaa6;
+    color: #fff;
+}
+.help-block {
+    font-size: 11px;
+    font-style: italic;
+}
+.text-green {
+  color: #0eaaa6;
+}
+.modal-content{
+	border-radius: 0px;
+}
+.form-group{
+	border-radius: 0px;
+}
