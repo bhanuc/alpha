@@ -11,15 +11,25 @@
     <title>Rewize.com</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="http://bhanuc.github.io/alpha/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="css/custom.css">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap-checkbox.css">
+    <link rel="stylesheet" href="css/font-awesome.css">
+    <!-- <link rel="stylesheet" href="http://awesome-bootstrap-checkbox.okendoken.com/demo/build.css"> -->
     <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
     <!--[if lt IE 9]><script src="/assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
     <script src="http://bhanuc.github.io/alpha/assets/js/ie-emulation-modes-warning.js"></script>
      <style type="text/css">
       html, body, #map-canvas { height: 100%; margin: 0; padding: 0;}
 
-       a { color: inherit;}
+      a { color: inherit;}
+      .search-panel .form-group {
+        margin: 0 5px 20px 5px;
+        position: relative;
+      }
+      input{
+        background: white;
+      }
 
     </style>
     
@@ -69,7 +79,6 @@
             </div>
           </div>
         </nav>
-
       </div>
     </div>
 
@@ -81,7 +90,65 @@
       <div id="map-canvas" class="img-responsive" style='overflow: hidden; background-image: url("http://bhanuc.github.io/alpha/img/1.jpg"); background-repeat: no-repeat; background-size: cover;'>
 
       </div>
-
+      <div class="search_panel" style="position:absolute;bottom:0;height:70px;width:100%;background:rgba(0, 0, 0, 0.4)">
+          <form class="form-inline" role="form" style="width:90%;margin:auto;margin-top:20px">
+            <div class="form-group">
+                <input type="text" class="form-control" id="city" placeholder="City" autocomplete="off">
+            </div>
+            <div class="form-group hidden-xs adv">
+                <a href="http://mariusn.com/themes/reales/index.html#" data-toggle="dropdown" class="btn btn-white dropdown-toggle" style="background:white;border-radius: 2px;">
+                    <span class="dropdown-label">Bedrooms</span> <span class="caret"></span>
+                </a>
+                <ul class="dropdown-menu dropdown-select">
+                    <li class="active"><input type="radio" name="bedno" checked="checked" style="display:none"><a href="http://mariusn.com/themes/reales/index.html#">Bedrooms</a></li>
+                    <li><input type="radio" name="bedno" style="display:none"><a href="http://mariusn.com/themes/reales/index.html#">1</a></li>
+                    <li><input type="radio" name="bedno" style="display:none"><a href="http://mariusn.com/themes/reales/index.html#">2</a></li>
+                    <li><input type="radio" name="bedno" style="display:none"><a href="http://mariusn.com/themes/reales/index.html#">3</a></li>
+                    <li><input type="radio" name="bedno" style="display:none"><a href="http://mariusn.com/themes/reales/index.html#">4</a></li>
+                </ul>
+            </div>
+            <div class="form-group hidden-xs adv">
+                <a href="http://mariusn.com/themes/reales/index.html#" data-toggle="dropdown" class="btn btn-white dropdown-toggle" style="background:white;border-radius: 2px;">
+                    <span class="dropdown-label">Bathrooms</span> <span class="caret"></span>
+                </a>
+                <ul class="dropdown-menu dropdown-select">
+                    <li class="active"><input type="radio" name="bathno" checked="checked" style="display:none"><a href="http://mariusn.com/themes/reales/index.html#">Bathrooms</a></li>
+                    <li><input type="radio" name="bathno" style="display:none"><a href="http://mariusn.com/themes/reales/index.html#">1</a></li>
+                    <li><input type="radio" name="bathno" style="display:none"><a href="http://mariusn.com/themes/reales/index.html#">2</a></li>
+                    <li><input type="radio" name="bathno" style="display:none"><a href="http://mariusn.com/themes/reales/index.html#">3</a></li>
+                    <li><input type="radio" name="bathno" style="display:none"><a href="http://mariusn.com/themes/reales/index.html#">4</a></li>
+                </ul>
+            </div>
+            <div class="form-group hidden-xs adv">
+                <div class="input-group">
+                    <div class="input-group-addon">$</div>
+                    <input class="form-control price" type="text" placeholder="From">
+                </div>
+            </div>
+            <div class="form-group hidden-xs adv">
+                <div class="input-group">
+                    <div class="input-group-addon">$</div>
+                    <input class="form-control price" type="text" placeholder="To">
+                </div>
+            </div>
+            <div class="form-group hidden-xs adv checkbox checkbox-primary">
+                <input id="checkbox2" type="checkbox">
+                <label for="checkbox2" style="color:white">
+                    For Rent
+                </label>
+            </div>
+            <div class="checkbox checkbox-success">
+                <input id="checkbox3" type="checkbox">
+                <label for="checkbox3" style="color:white">
+                    For Sale
+                </label>
+            </div>
+            <div class="form-group">
+                <a href="http://mariusn.com/themes/reales/explore.html" class="btn btn-green isThemeBtn" style="background: #068b85; color: white;border-radius: 2px;">Search</a>
+                <a href="http://mariusn.com/themes/reales/index.html#" class="btn btn-o btn-white pull-right visible-xs" id="advanced">Advanced Search <span class="fa fa-angle-up"></span></a>
+            </div>
+        </form>
+      </div>
     </div><!-- /.carousel -->
 
 
@@ -237,7 +304,7 @@
     </div><!-- /.container -->
 
      <!-- FOOTER -->
-        <footer>
+        <footer style="overflow-x:hidden">
           <div class="row" style="height:250px; background-color:#545454">
             <div class="col-md-3" style="text-align:center;color:white;margin-top:40px">
               <p>Browse all houses</p>
