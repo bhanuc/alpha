@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="/favicon.ico">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <link rel="stylesheet" type="text/css" href="css/font-awesome.css">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap-slider.css">
+    <title>Search Page</title>
+    <script src="https://maps.googleapis.com/maps/api/js"></script>
+    <script>
+        function initialize() {
+          var mapCanvas = document.getElementById('map-canvas');
+          var mapOptions = {scrollwheel: false,
+            navigationControl: false,
+            mapTypeControl: false,
+            scaleControl: false,
+            draggable: false,
+            center: new google.maps.LatLng(26.460306, 80.296916),
+            zoom: 8,
+            mapTypeId: google.maps.MapTypeId.ROADMAP
+          }
+          var map = new google.maps.Map(mapCanvas, mapOptions)
+        }
+        google.maps.event.addDomListener(window, 'load', initialize);
+      </script>
+    <style type="text/css">
+    .slider.slider-horizontal .slider-track {
+      height: 3px;
+    }
+    .slider.slider-horizontal .slider-handle {
+      margin-top: -9px;
+    }
+    .slider-selection {
+      background-image: -webkit-linear-gradient(top, rgb(14, 170, 166) 0%, rgb(14, 170, 166) 100%);
+      background-image: linear-gradient(to bottom, rgb(14, 170, 166) 0%, rgb(14, 170, 166) 100%);
+      }
+    .slider-handle {
+      background-image: -webkit-linear-gradient(top, #FFFFFF 0%, #FFFFFF 100%);
+      background-image: linear-gradient(to bottom, #FFFFFF 0%, #FFFFFF 100%); 
+      opacity: 1; 
+      border: 1px solid rgb(14, 170, 166);
+      }
+    .form-control{
+      border-radius: 2px;
+    }
+    </style>
+  </head>
+  <!-- <body>
+    <nav class="navbar navbar-default navbar-fixed-top" style="background-color:rgb(14, 170, 166)">
+      <div class="container" style="width:100%">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#" style="padding-top:5px"><img src="images/kitnelogo2.svg" style="width:75px"></a>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="#" style="color:rgb(255, 173, 0);font-size:16px">List Your Spacing</a></li>
+            <li><a href="#">Login</a></li>
+            <li><a href="#">Signup</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div class="container" style="margin:0;width:100%;padding:0;overflow-x:hidden">
+      
+      <div id="map-canvas" style="width:50%;float:left;margin-top:50px;position:absolute;overflow:hidden;top:0;bottom:0">
+      </div>
+      <div id="content" style="position:absolute;top:0;right:0;width:50%;margin-top:50px;padding:10px">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="row">
+              <div class="col-md-8"><h4>Filter Your Results</h4></div>
+              <div class="col-md-4" style="text-align:right"><h4><i class="fa fa-minus"></i></h4></div>
+            </div>
+          </div>
+          <div class="col-md-12">
+            <div class="row">
+              <div class="col-md-6">
+                <form>
+                  <label for="location">Location</label>
+                  <div class="form-group">
+                    <select class="form-control">
+                      <option>Select A Location</option>
+                      <option>1</option>
+                      <option>2</option>
+                      <option>3</option>
+                      <option>4</option>
+                      <option>5</option>
+                    </select>
+                  </div>
+                </form>    
+              </div>
+              <div class="col-md-6">
+                <form>
+                  <div class="form-group">
+                    <label for="type">Property Type</label>
+                    <select class="form-control">
+                      <option>Select A Type</option>
+                      <option>Apartment</option>
+                      <option>Building Area</option>
+                      <option>Condo</option>
+                      <option>Cottage</option>
+                      <option>Family House</option>
+                      <option>Single Home</option>
+                      <option>Villa</option>
+                    </select>
+                  </div>
+                </form>    
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6">
+                <div class="row">
+                  <div class="col-md-12">Price Range:<b><i class="fa fa-inr"></i> 1,00,000 <i class="fa fa-minus"></i> 100,00,00,000</b></div>
+                  <div class="col-md-12">
+                    <input id="ex2" type="text" class="span2" value="" data-slider-min="100000" data-slider-max="1000000000" data-slider-step="5" data-slider-value="[250,450]"/>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="row">
+                  <div class="col-md-12">Price Range:<b>0 <i class="fa fa-minus"></i> 20,000 sq.feet</b></div>
+                  <div class="col-md-12">
+                    <input id="ex3" type="text" class="span2" value="" data-slider-min="100000" data-slider-max="1000000000" data-slider-step="5" data-slider-value="[250,450]"/>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-3">
+                <p style="margin-top:10px; margin-bottom:0">Bathrooms</p>
+                <ul class="pagination" style="margin-top:10px">
+                  <li><a href="#" onclick="myfunction1()">&laquo;</a></li>
+                  <li><a href="#" id="bathrooms">1</a></li>
+                  <li><a href="#" onclick="myfunction2()">&raquo;</a></li>
+                </ul>
+              </div>
+              <div class="col-md-3">
+                <p style="margin-top:10px; margin-bottom:0">Bedrooms</p>
+                <ul class="pagination" style="margin-top:10px">
+                  <li><a href="#" onclick="myfunction3()">&laquo;</a></li>
+                  <li><a href="#" id="bedrooms">1</a></li>
+                  <li><a href="#" onclick="myfunction4()">&raquo;</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-12" style="background:#f3f3f3">
+            <div class="content" style="margin:auto">
+              <div class="row">
+                <div class="col-md-6"><img src="images/search1.png" style="width:100%;height:200px;padding-top:10px;"></div>
+                <div class="col-md-6"><img src="images/search1.png" style="width:100%;height:200px;padding-top:10px;"></div>
+                <div class="col-md-6"><img src="images/search1.png" style="width:100%;height:200px;padding-top:10px;"></div>
+                <div class="col-md-6"><img src="images/search1.png" style="width:100%;height:200px;padding-top:10px;"></div>
+                <div class="col-md-6"><img src="images/search1.png" style="width:100%;height:200px;padding-top:10px;"></div>
+                <div class="col-md-6"><img src="images/search1.png" style="width:100%;height:200px;padding-top:10px;"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+    
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+    <script type="text/javascript" src="js/bootstrap.js"></script>
+    <script type="text/javascript" src="js/carousel.js"></script>
+    <script type="text/javascript" src="js/bootstrap-slider.js"></script>
+    <script type="text/javascript">
+      $("#ex2").slider({});
+      $("#ex3").slider({});
+      var bathrooms = 1;
+      var bedrooms = 1;
+      function myfunction1(){
+        if(bathrooms>1){
+          bathrooms--;
+        }
+        document.getElementById('bathrooms').innerHTML=bathrooms;
+      }
+      function myfunction2(){
+        bathrooms++;
+        document.getElementById('bathrooms').innerHTML=bathrooms;
+      }
+      function myfunction3(){
+        if(bedrooms>1){
+          bedrooms--;
+        }
+        document.getElementById('bedrooms').innerHTML=bedrooms;
+      }
+      function myfunction4(){
+        bedrooms++;
+        document.getElementById('bedrooms').innerHTML=bedrooms;
+      }
+    </script>
+  </body> -->
+<body>
+  <div class="container" style="padding:0">
+    <nav class="navbar navbar-default navbar-fixed-top" style="background-color:rgb(14, 170, 166)">
+      <div class="container" style="width:100%">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#" style="padding-top:5px"><img src="images/kitnelogo2.svg" style="width:75px"></a>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="#" style="color:rgb(255, 173, 0);font-size:16px">List Your Spacing</a></li>
+            <li><a href="#">Login</a></li>
+            <li><a href="#">Signup</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div class="left_pane" id="map-canvas"></div>
+    <div class="right_pane">
+      <div class="row" style="margin:0;padding:10px">
+        <div class="col-md-12">
+          <div class="row">
+            <div class="col-md-8"><h4>Filter Your Results</h4></div>
+            <div class="col-md-4" style="text-align:right"><h4><i class="fa fa-minus"></i></h4></div>
+          </div>
+        </div>
+        <div class="col-md-12">
+          <div class="row">
+            <div class="col-md-6">
+              <form>
+                <label for="location">Location</label>
+                <div class="form-group">
+                  <select class="form-control">
+                    <option>Select A Location</option>
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                  </select>
+                </div>
+              </form>    
+            </div>
+            <div class="col-md-6">
+              <form>
+                <div class="form-group">
+                  <label for="type">Property Type</label>
+                  <select class="form-control">
+                    <option>Select A Type</option>
+                    <option>Apartment</option>
+                    <option>Building Area</option>
+                    <option>Condo</option>
+                    <option>Cottage</option>
+                    <option>Family House</option>
+                    <option>Single Home</option>
+                    <option>Villa</option>
+                  </select>
+                </div>
+              </form>    
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6">
+              <div class="row">
+                <div class="col-md-12">Price Range:<b><i class="fa fa-inr"></i> 1,00,000 <i class="fa fa-minus"></i> 100,00,00,000</b></div>
+                <div class="col-md-12">
+                  <input id="ex2" type="text" class="span2" value="" data-slider-min="100000" data-slider-max="1000000000" data-slider-step="5" data-slider-value="[250,450]"/>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="row">
+                <div class="col-md-12">Price Range:<b>0 <i class="fa fa-minus"></i> 20,000 sq.feet</b></div>
+                <div class="col-md-12">
+                  <input id="ex3" type="text" class="span2" value="" data-slider-min="100000" data-slider-max="1000000000" data-slider-step="5" data-slider-value="[250,450]"/>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-3">
+              <p style="margin-top:10px; margin-bottom:0">Bathrooms</p>
+              <ul class="pagination" style="margin-top:10px">
+                <li><a href="#" onclick="myfunction1()">&laquo;</a></li>
+                <li><a href="#" id="bathrooms">1</a></li>
+                <li><a href="#" onclick="myfunction2()">&raquo;</a></li>
+              </ul>
+            </div>
+            <div class="col-md-3">
+              <p style="margin-top:10px; margin-bottom:0">Bedrooms</p>
+              <ul class="pagination" style="margin-top:10px">
+                <li><a href="#" onclick="myfunction3()">&laquo;</a></li>
+                <li><a href="#" id="bedrooms">1</a></li>
+                <li><a href="#" onclick="myfunction4()">&raquo;</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-12" style="background:white">
+          <div class="content" style="margin:auto">
+            <div class="row">
+              <div class="col-md-6">
+                <figure class="effect-honey">
+                  <img src="images/search1.png" class="results" style="width:100%;height:200px;padding-top:10px;">
+                  <figcaption>
+                    <h2>Dreamy <span>Honey</span> <i>Now</i></h2>
+                    <a href="#">View more</a>
+                  </figcaption>     
+                </figure>
+              </div>
+              <div class="col-md-6">
+                <figure class="effect-honey">
+                  <img src="images/search1.png" class="results" style="width:100%;height:200px;padding-top:10px;">
+                  <figcaption>
+                    <h2>Dreamy <span>Honey</span> <i>Now</i></h2>
+                    <a href="#">View more</a>
+                  </figcaption>     
+                </figure>
+              </div>
+              <div class="col-md-6">
+                <figure class="effect-honey">
+                  <img src="images/search1.png" class="results" style="width:100%;height:200px;padding-top:10px;">
+                  <figcaption>
+                    <h2>Dreamy <span>Honey</span> <i>Now</i></h2>
+                    <a href="#">View more</a>
+                  </figcaption>     
+                </figure>
+              </div>
+              <div class="col-md-6">
+                <figure class="effect-honey">
+                  <img src="images/search1.png" class="results" style="width:100%;height:200px;padding-top:10px;">
+                  <figcaption>
+                    <h2>Dreamy <span>Honey</span> <i>Now</i></h2>
+                    <a href="#">View more</a>
+                  </figcaption>     
+                </figure>
+              </div>
+              <div class="col-md-6">
+                <figure class="effect-honey">
+                  <img src="images/search1.png" class="results" style="width:100%;height:200px;padding-top:10px;">
+                  <figcaption>
+                    <h2>Dreamy <span>Honey</span> <i>Now</i></h2>
+                    <a href="#">View more</a>
+                  </figcaption>     
+                </figure>
+              </div>
+              <div class="col-md-6">
+                <figure class="effect-honey">
+                  <img src="images/search1.png" class="results" style="width:100%;height:200px;padding-top:10px;">
+                  <figcaption>
+                    <h2>Dreamy <span>Honey</span> <i>Now</i></h2>
+                    <a href="#">View more</a>
+                  </figcaption>     
+                </figure>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-12" style="text-align:center">
+          <ul class="pagination">
+            <li><a href="#">&laquo;</a></li>
+            <li><a href="#">1</a></li>
+            <li><a href="#">2</a></li>
+            <li><a href="#">3</a></li>
+            <li><a href="#">4</a></li>
+            <li><a href="#">5</a></li>
+            <li><a href="#">6</a></li>
+            <li><a href="#">7</a></li>
+            <li><a href="#">&raquo;</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+    <script type="text/javascript" src="js/bootstrap.js"></script>
+    <script type="text/javascript" src="js/carousel.js"></script>
+    <script type="text/javascript" src="js/bootstrap-slider.js"></script>
+    <script type="text/javascript">
+      $("#ex2").slider({});
+      $("#ex3").slider({});
+      var bathrooms = 1;
+      var bedrooms = 1;
+      function myfunction1(){
+        if(bathrooms>1){
+          bathrooms--;
+        }
+        document.getElementById('bathrooms').innerHTML=bathrooms;
+      }
+      function myfunction2(){
+        bathrooms++;
+        document.getElementById('bathrooms').innerHTML=bathrooms;
+      }
+      function myfunction3(){
+        if(bedrooms>1){
+          bedrooms--;
+        }
+        document.getElementById('bedrooms').innerHTML=bedrooms;
+      }
+      function myfunction4(){
+        bedrooms++;
+        document.getElementById('bedrooms').innerHTML=bedrooms;
+      }
+    </script>
+</body>
+</html>
