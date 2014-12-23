@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="/favicon.ico">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/font-awesome.css">
+    <title>Listing</title>
+    <script src="https://maps.googleapis.com/maps/api/js"></script>
+    <script>
+        function initialize() {
+          var mapCanvas = document.getElementById('map-canvas');
+          var mapOptions = {scrollwheel: false,
+            navigationControl: false,
+            mapTypeControl: false,
+            scaleControl: false,
+            draggable: false,
+            center: new google.maps.LatLng(26.460306, 80.296916),
+            zoom: 8,
+            mapTypeId: google.maps.MapTypeId.ROADMAP
+          }
+          var map = new google.maps.Map(mapCanvas, mapOptions)
+        }
+        google.maps.event.addDomListener(window, 'load', initialize);
+      </script>
+      <style type="text/css">
+        a:hover{
+          text-decoration: none;
+        }
+        .property_images:hover{
+          -webkit-filter: brightness(0.5) blur(0.5px);
+        }
+        .similar_images:hover{
+          -webkit-filter: brightness(1.5) blur(0.5px);
+        }
+        .similar_images:hover .carousel-caption{
+          color: red;
+        }
+      </style>
+  </head>
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top" style="background-color:rgb(14, 170, 166)">
+      <div class="container" style="width:100%">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#" style="padding-top:5px"><img src="images/kitnelogo2.svg" style="width:75px"></a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="#" style="color:rgb(255, 173, 0);font-size:16px">List Your Spacing</a></li>
+            <li><a href="#">Login</a></li>
+            <li><a href="#">Signup</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div class="container">
+      <div class="row" style="margin-top: 60px">
+        <div class="col-md-9 col-sm-9 col-xs-12">
+          <div class="row">
+            <div class="col-md-7 col-sm-7 col-xs-12">
+              <div id="myCarousel" class="carousel slide">
+                 <!-- Carousel indicators -->
+                <ol class="carousel-indicators">
+                  <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                  <li data-target="#myCarousel" data-slide-to="1"></li>
+                  <li data-target="#myCarousel" data-slide-to="2"></li>
+                </ol>   
+                 <!-- Carousel items -->
+                <div class="carousel-inner">
+                  <div class="item active">
+                    <img src="images/listing1.jpg" alt="First slide">
+                  </div>
+                  <div class="item">
+                    <img src="images/listing1.jpg" alt="Second slide">
+                  </div>
+                  <div class="item">
+                    <img src="images/listing1.jpg" alt="Third slide">
+                  </div>
+                </div>
+                 <!-- Carousel nav -->
+                <a class="carousel-control left" href="#myCarousel" 
+                  data-slide="prev">&lsaquo;</a>
+                <a class="carousel-control right" href="#myCarousel" 
+                  data-slide="next">&rsaquo;</a>
+              </div> 
+            </div>
+            <div class="col-md-5 col-sm-5 col-xs-10 col-md-offset-0 col-sm-offset-0 col-xs-offset-1">
+              <div class="table-responsive">
+                <table class="table">
+                  <tr>
+                    <td>Price</td>
+                    <td style="text-align:right">Contact us</td>
+                  </tr>
+                  <tr>
+                    <td>ID:</td>
+                    <td style="text-align:right">#561</td>
+                  </tr>
+                  <tr>
+                    <td>Contract Type:</td>
+                    <td style="text-align:right">For Sale</td>
+                  </tr>
+                  <tr>
+                    <td>Type:</td>
+                    <td style="text-align:right">Family House</td>
+                  </tr>
+                  <tr>
+                    <td>Location:</td>
+                    <td style="text-align:right">Burrville</td>
+                  </tr>
+                  <tr>
+                    <td>Bedrooms:</td>
+                    <td style="text-align:right">2</td>
+                  </tr>
+                  <tr>
+                    <td>Area:</td>
+                    <td style="text-align:right">800m<sup>2</sup></td>
+                  </tr>
+                </table>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12">
+              <h4>About Property</h4>
+              <p>Quisque non dictum eros. Praesent porta vehicula arcu eu ornare. Donec id egestas arcu. Suspendisse auctor condimentum ligula ultricies cursus. Vestibulum vel orci vel lacus rhoncus sagittis sed vitae mi. Pellentesque molestie elit bibendum tincidunt semper. Aliquam ac volutpat risus. In felis felis, posuere commodo aliquet eget, sagittis sed turpis. Phasellus commodo turpis non nunc egestas, et egestas felis pretium. Pellentesque dignissim libero vitae tincidunt semper. Nam id ante nisi. Nam sollicitudin, dolor non suscipit feugiat, nibh lacus commodo metus, nec tempus dui velit sagittis velit. Pellentesque elementum risus rhoncus justo porta, at varius odio consequat. Duis non augue adipiscing, posuere quam non, tempus urna.</p>
+            </div>
+            <div class="col-md-12 col-sm-12 col-xs-12">
+              <h4>General amenities</h4>
+              <div class="row">
+                <div class="col-md-6 col-sm-6 col-xs-6">
+                  <ul>
+                    <li class="checked">Air conditioning</li>
+                    <li class="plain">Balcony</li>
+                    <li class="plain">Bedding</li>
+                    <li class="checked">Cable TV</li>
+                    <li class="plain">Cleaning after exit</li>
+                    <li class="plain">Cofee pot</li>
+                    <li class="checked">Computer</li>
+                    <li class="checked">Cot</li>
+                    <li class="checked">Dishwasher</li>
+                    <li class="checked">DVD</li>
+                    <li class="plain">Fan</li>
+                  </ul>
+                </div>
+                <div class="col-md-6 col-sm-6 col-xs-6">
+                  <ul>
+                    <li class="plain">Fridge</li>
+                    <li class="checked">Grill</li>
+                    <li class="plain">Hairdryer</li>
+                    <li class="plain">Heating</li>
+                    <li class="plain">Hi-fi</li>
+                    <li class="plain">Internet</li>
+                    <li class="plain">Iron</li>
+                    <li class="checked">Juicer</li>
+                    <li class="plain">Lift</li>
+                    <li class="checked">Microwave</li>
+                    <li class="plain">Oven</li>
+                  </ul>
+                </div>
+                <div class="col-md-6 col-sm-6 col-xs-6">
+                  <ul>
+                    <li class="plain">Parking</li>
+                    <li class="checked">Parquet</li>
+                    <li class="checked">Radio</li>
+                    <li class="checked">Roof terrace</li>
+                    <li class="plain">Smoking allowed</li>
+                    <li class="plain">Terrace</li>
+                    <li class="plain">Toaster</li>
+                    <li class="checked">Towelwes</li>
+                    <li class="checked">Use of pool</li>
+                    <li class="plain">Video</li>
+                  </ul>
+                </div>
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                  <div class="row"><div class="col-md-12 col-sm-12 col-xs-8 col-md-offset-0 col-sm-offset-0 col-xs-offset-2" id="map-canvas" style="height:200px;border:1px solid black"></div></div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                  <h4>Share On Social Networks</h4>
+                </div>
+                <div class="col-md-1 col-sm-1 col-xs-2">
+                  <a href=""><img src="images/facebook.svg" style="width:100%"></a>
+                </div>
+                <div class="col-md-1 col-sm-1 col-xs-2">
+                  <a href=""><img src="images/g+.svg" style="width:200%"></a>
+                </div>
+                <div class="col-md-1 col-sm-1 col-xs-2">
+                  <a href=""><img src="images/twitter.svg" style="width:100%"></a>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-12 col-sm-10 col-xs-10 col-md-offset-0 col-sm-offset-0 col-xs-offset-0">
+                  <h4 style="color:rgb(14, 170, 166)">Similar Properties</h4>
+                </div>
+                
+                <div id="myCarousel1" class="carousel slide col-md-12" style="padding:0">
+                  <ol class="carousel-indicators" style="bottom:0">
+                    <li data-target="#myCarousel1" data-slide-to="0" class="active"></li>
+                    <li data-target="#myCarousel1" data-slide-to="1"></li>
+                    <li data-target="#myCarousel1" data-slide-to="2"></li>
+                  </ol>   
+                      
+                  <div class="carousel-inner">
+                    <div class="item active row">
+                      <div class="col-md-4 col-sm-4 col-xs-4 similar_images" style="padding:0">
+                        <img src="images/listing1.jpg" style="padding:10px;width:100%;height:200px" alt="First slide">
+                        <div class="carousel-caption" style="padding-bottom:0">
+                          <h4>Modern Building in India</h4>
+                          <p>pendurthi, Visakhapatnam</p>
+                        </div>
+                      </div>
+                      <div class="col-md-4 col-sm-4 col-xs-4 similar_images" style="padding:0">
+                        <img src="images/listing1.jpg" style="padding:10px;width:100%;height:200px" alt="First slide">
+                        <div class="carousel-caption" style="padding-bottom:0">
+                          <h4>Modern Building in India</h4>
+                          <p>pendurthi, Visakhapatnam</p>
+                        </div>
+                      </div>
+                      <div class="col-md-4 col-sm-4 col-xs-4 similar_images" style="padding:0">
+                        <img src="images/listing1.jpg" style="padding:10px;width:100%;height:200px" alt="First slide">
+                        <div class="carousel-caption" style="padding-bottom:0">
+                          <h4>Modern Building in India</h4>
+                          <p>pendurthi, Visakhapatnam</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="item row">
+                      <div class="col-md-4 col-sm-4 col-xs-4 similar_images" style="padding:0">
+                        <img src="images/listing1.jpg" style="padding:10px;width:100%;height:200px" alt="First slide">
+                        <div class="carousel-caption" style="padding-bottom:0">
+                          <h4>Modern Building in India</h4>
+                          <p>pendurthi, Visakhapatnam</p>
+                        </div>
+                      </div>
+                      <div class="col-md-4 col-sm-4 col-xs-4 similar_images" style="padding:0">
+                        <img src="images/listing1.jpg" style="padding:10px;width:100%;height:200px" alt="First slide">
+                        <div class="carousel-caption" style="padding-bottom:0">
+                          <h4>Modern Building in India</h4>
+                          <p>pendurthi, Visakhapatnam</p>
+                        </div>
+                      </div>
+                      <div class="col-md-4 col-sm-4 col-xs-4 similar_images" style="padding:0">
+                        <img src="images/listing1.jpg" style="padding:10px;width:100%;height:200px" alt="First slide">
+                        <div class="carousel-caption" style="padding-bottom:0">
+                          <h4>Modern Building in India</h4>
+                          <p>pendurthi, Visakhapatnam</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="item row">
+                      <div class="col-md-4 col-sm-4 col-xs-4 similar_images" style="padding:0">
+                        <img src="images/listing1.jpg" style="padding:10px;width:100%;height:200px" alt="First slide">
+                        <div class="carousel-caption" style="padding-bottom:0">
+                          <h4>Modern Building in India</h4>
+                          <p>pendurthi, Visakhapatnam</p>
+                        </div>
+                      </div>
+                      <div class="col-md-4 col-sm-4 col-xs-4 similar_images" style="padding:0">
+                        <img src="images/listing1.jpg" style="padding:10px;width:100%;height:200px" alt="First slide">
+                        <div class="carousel-caption" style="padding-bottom:0">
+                          <h4>Modern Building in India</h4>
+                          <p>pendurthi, Visakhapatnam</p>
+                        </div>
+                      </div>
+                      <div class="col-md-4 col-sm-4 col-xs-4 similar_images" style="padding:0">
+                        <img src="images/listing1.jpg" style="padding:10px;width:100%;height:200px" alt="First slide">
+                        <div class="carousel-caption" style="padding-bottom:0">
+                          <h4>Modern Building in India</h4>
+                          <p>pendurthi, Visakhapatnam</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                      
+                  <a class="left carousel-control" href="#myCarousel1" 
+                    data-slide="prev">&lsaquo;</a>
+                  <a class="right carousel-control" href="#myCarousel1" 
+                    data-slide="next">&rsaquo;</a>
+                </div> 
+              </div>
+              <a href=""><h5 style="text-align:center">Show More</h5></a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-3 col-xs-12">
+          <div class="row">
+            <div class="col-md-12 col-sm-12 col-xs-10 col-xs-offset-1" style="padding:0">
+              <h4 style="text-align:center">Enquire Now</h4>
+              <div class="content" style="background:#c0392b;padding:15px;border-radius:2px">
+                <form role="form">
+                  <div class="form-group">
+                    <label for="name">Name *</label>
+                    <input type="name" class="form-control" id="name" placeholder="" required>
+                  </div>
+                  <div class="form-group">
+                    <label for="phone">Phone *</label>
+                    <input type="phone" class="form-control" id="phone" placeholder="" required>
+                  </div>
+                  <div class="form-group">
+                    <label for="date">Date *</label>
+                    <input type="date" class="form-control" id="date" placeholder="" required>
+                  </div>
+                  <div class="form-group">
+                    <label for="email">Email *</label>
+                    <input type="email" class="form-control" id="email" placeholder="" required>
+                  </div>
+                  <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea type="message" class="form-control" id="message" placeholder="" style="height:65px"></textarea>
+                  </div>
+                  <button type="submit" class="btn btn-primary btn-block" style="width:75%; margin:auto">Submit</button>
+                </form>
+              </div>
+            </div>
+            <div class="col-md-12 col-sm-12 col-xs-10 col-xs-offset-1" style="padding:0">
+              <h4 style="text-align:center">Search Properties</h4>
+              <div class="content" style="background:#c0392b;padding:15px;border-radius:2px">
+                <form role="form">
+                  <div class="form-group">
+                    <label for="location">Location</label>
+                    <select class="form-control">
+                      <option>Select a Location</option>
+                      <option>1</option>
+                      <option>2</option>
+                      <option>3</option>
+                      <option>4</option>
+                      <option>5</option>
+                    </select>
+                  </div>
+                  <div class="form-group">
+                    <label for="type">Type</label>
+                    <select class="form-control">
+                      <option>Select a Type</option>
+                      <option>Apartment</option>
+                      <option>Building Area</option>
+                      <option>Condo</option>
+                      <option>Cottage</option>
+                      <option>Family House</option>
+                      <option>Single Home</option>
+                      <option>Villa</option>
+                    </select>
+                  </div>
+                  <div class="form-group">
+                    <label for="pfrom">Price from</label>
+                    <select class="form-control">
+                      <option>-</option>
+                      <option>1,00,000 <i class="icon-inr"></i></option>
+                      <option>2,00,000 <i class="icon-inr"></i></option>
+                      <option>3,00,000 <i class="icon-inr"></i></option>
+                      <option>4,00,000 <i class="icon-inr"></i></option>
+                      <option>5,00,000 <i class="icon-inr"></i></option>
+                      <option>6,00,000 <i class="icon-inr"></i></option>
+                      <option>7,00,000 <i class="icon-inr"></i></option>
+                    </select>
+                  </div>
+                  <div class="form-group">
+                    <label for="tfrom">Price to</label>
+                    <select class="form-control">
+                      <option>-</option>
+                      <option>1,00,000 <i class="icon-inr"></i></option>
+                      <option>2,00,000 <i class="icon-inr"></i></option>
+                      <option>3,00,000 <i class="icon-inr"></i></option>
+                      <option>4,00,000 <i class="icon-inr"></i></option>
+                      <option>5,00,000 <i class="icon-inr"></i></option>
+                      <option>6,00,000 <i class="icon-inr"></i></option>
+                      <option>7,00,000 <i class="icon-inr"></i></option>
+                    </select>
+                  </div>
+                  <div class="form-group">
+                    <label for="areaf">Area from *</label>
+                    <input class="form-control" id="areaf" placeholder="" required>
+                  </div>
+                  <div class="form-group">
+                    <label for="areat">Area To *</label>
+                    <input type="areat" class="form-control" id="areat" placeholder="" required>
+                  </div>
+                  <button type="submit" class="btn btn-primary btn-block" style="width:75%; margin:auto">Filter Now</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+    <script type="text/javascript" src="js/bootstrap.js"></script>
+    <script type="text/javascript" src="js/jquery.slides.min.js"></script>
+    <script type="text/javascript" src="js/carousel.js"></script>
+    <script type="text/javascript">
+      $(function(){
+        $("#slides").slidesjs({
+          width: 100,
+          height: 35,
+          start: 2,
+          navigation: {
+            active: true,
+            effect: "fade"
+          },
+           pagination: {
+            active: true,
+            effect: "slide"
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
