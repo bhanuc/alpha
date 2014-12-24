@@ -176,16 +176,16 @@ figure figcaption > a {
 	opacity: 0;
 }
 
-figure h2 {
+figure h5 {
 	word-spacing: -0.15em;
 	font-weight: 300;
 }
 
-figure h2 span {
+figure h5 span {
 	font-weight: 800;
 }
 
-figure h2,
+figure h5,
 figure p {
 	margin: 0;
 }
@@ -221,7 +221,7 @@ figure.effect-honey figcaption::before {
 	transform: translate3d(0,10px,0);
 }
 
-figure.effect-honey h2 {
+figure.effect-honey h5 {
 	position: absolute;
 	bottom: 0;
 	left: 0;
@@ -232,7 +232,7 @@ figure.effect-honey h2 {
 	transform: translate3d(0,-30px,0);
 }
 
-figure.effect-honey h2 i {
+figure.effect-honey h5 i {
 	font-style: normal;
 	opacity: 0;
 	-webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
@@ -242,15 +242,25 @@ figure.effect-honey h2 i {
 }
 
 figure.effect-honey figcaption::before,
-figure.effect-honey h2 {
+figure.effect-honey h5 {
 	-webkit-transition: -webkit-transform 0.35s;
 	transition: transform 0.35s;
 }
 
 figure.effect-honey:hover figcaption::before,
-figure.effect-honey:hover h2,
-figure.effect-honey:hover h2 i {
+figure.effect-honey:hover h5,
+figure.effect-honey:hover h5 i {
 	opacity: 1;
 	-webkit-transform: translate3d(0,0,0);
 	transform: translate3d(0,0,0);
+}
+
+@media (max-width: 767px) {
+    .left_pane{
+    	display: none;
+    }
+ 
+    .right_pane{
+    	width: 100%;
+    }
 }
